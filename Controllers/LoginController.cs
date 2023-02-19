@@ -14,10 +14,14 @@ namespace login.Controllers
 
         public IActionResult ProcessLogin(User user)
         {
-            LoginService securityService = new LoginService();
-            if (securityService.IsValid(user))
+            LoginService loginService = new LoginService();
+            
+            if (loginService.IsValid(user))
             {
-                return RedirectToAction("Index", "Home", new { user = user });
+                User currentUser = loginService.GetCurrentLoggedInUser();
+
+                return View("LoginSuccess", currentUser);
+
             }
             else
             {

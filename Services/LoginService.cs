@@ -10,5 +10,10 @@ namespace CST_350_Minesweeper.Services
         {
             return loginDAO.FindUserByNameAndPassword(user);
         }
+
+        public User GetCurrentLoggedInUser()
+        {
+            return loginDAO.GetUser();
+        }
     }
 }

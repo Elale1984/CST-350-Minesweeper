@@ -15,11 +15,7 @@ namespace CST_350_Minesweeper.Controllers
 
         public IActionResult Index()
         {
-            if (ViewData["user"] != null)
-            {
-                User user = (User)ViewData["user"];
-
-            }
+          
             return View();
         }
 

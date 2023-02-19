@@ -1,0 +1,11 @@
+﻿@model CST_350_Minesweeper.Models.User
+
+<div>
+    <h4>Login Failure</h4>
+    <hr />
+    <p>The Username @Model.Username or the Password @Model.Password are incorrect. Please try again. </p>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Login</a>
+</div>

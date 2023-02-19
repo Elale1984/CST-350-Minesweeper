@@ -7,6 +7,7 @@ namespace CST_350_Minesweeper.Services
     {
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CST-350-Minesweeper;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
+        User loggedInUser;
 
         public bool FindUserByNameAndPassword(User user)
         {
@@ -29,6 +30,22 @@ namespace CST_350_Minesweeper.Services
                     if (reader.HasRows)
                     {
                         success = true;
+
+                        // retrieve the user object from the database and set the loggedInUser variable
+                        while (reader.Read())
+                        {
+                            loggedInUser = new User()
+                            {
+                                FirstName = reader.GetString(reader.GetOrdinal("firstname")),
+                                LastName = reader.GetString(reader.GetOrdinal("lastname")),
+                                Sex = reader.GetString(reader.GetOrdinal("sex")),
+                                Age = reader.GetInt32(reader.GetOrdinal("age")),
+                                Username = reader.GetString(reader.GetOrdinal("username")),
+                                Password = reader.GetString(reader.GetOrdinal("password")),
+                                Email = reader.GetString(reader.GetOrdinal("email")),
+                                State = reader.GetString(reader.GetOrdinal("state")),
+                            };
+                        }
                     }
 
                 }
@@ -40,6 +57,9 @@ namespace CST_350_Minesweeper.Services
             return success;
         }
 
+        public User GetUser()
+        {
+            return loggedInUser;
+        }
     }
 }
-
