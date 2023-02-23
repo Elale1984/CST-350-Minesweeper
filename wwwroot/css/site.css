@@ -25,6 +25,9 @@ a {
 }
 
 body {
-    background-color: grey;
+    background: url("../img/bomb.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 

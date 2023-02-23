@@ -1,11 +1,15 @@
 ﻿
+
 h1 {
     font-size: 50px;
     text-shadow: #444 1px 1px 2px;
     font-family: Slackey,"Lucida Grande","Lucida Sans Unicode",Tahoma,Geneva,Arial,Verdana,sans-serif;
-    color: black;
+    color: white;
     margin-top: 80px;
 }
+
+
+
 
 h4 {
     color: white;
@@ -22,9 +26,7 @@ h4 {
 }
 
 
-menu_item-text{
 
-}
 #menu_item {
     margin: 10px 10px;
     border: 2px outset;
@@ -32,10 +34,10 @@ menu_item-text{
     background-color: azure;
 }
 
-#menu_item:hover {
-    background: purple;
-    color: lawngreen;
-}
+    #menu_item:hover {
+        background: purple;
+        color: lawngreen;
+    }
 
 
 
@@ -45,6 +47,7 @@ menu_item-text{
     margin-top: 60px;
 }
 
+
 .game_menu {
     flex-direction: column;
     border: 2px solid white;
@@ -52,5 +55,3 @@ menu_item-text{
     border-radius: 10px;
     background: url(../img/menu-bg.png) no-repeat center center fixed;
 }
-
-
