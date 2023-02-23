@@ -1,0 +1,56 @@
+﻿
+h1 {
+    font-size: 50px;
+    text-shadow: #444 1px 1px 2px;
+    font-family: Slackey,"Lucida Grande","Lucida Sans Unicode",Tahoma,Geneva,Arial,Verdana,sans-serif;
+    color: black;
+    margin-top: 80px;
+}
+
+h4 {
+    color: white;
+}
+
+
+
+#menu {
+    padding: 2px;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    list-style-type: none;
+}
+
+
+menu_item-text{
+
+}
+#menu_item {
+    margin: 10px 10px;
+    border: 2px outset;
+    padding: 5px;
+    background-color: tan;
+}
+
+#menu_item:hover {
+    background: purple;
+    color: lawngreen;
+}
+
+
+
+.menu_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.game_menu {
+    flex-direction: column;
+    border: 2px solid white;
+    padding: 80px 40px;
+    border-radius: 10px;
+    background: url(../img/menu-bg.png) no-repeat center center fixed;
+}
+
+
