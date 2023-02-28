@@ -1,0 +1,105 @@
+﻿@model List<Milestone.Models.CellModel>
+
+<style>
+    .game-button {
+        width: 85px;
+        height: 85px;
+        border: none;
+        white-space: nowrap;
+        text-align: center;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        outline: 1px solid black;
+        color: white;
+        text-align: center;
+        position: relative;
+    }
+
+    .game-button-image {
+        width: 85px;
+        height: 85px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+   
+
+    .line-break {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    .button-label {
+        font-size: 8px;
+        text-align: center;
+    }
+
+    .cell-zone {
+        background-image: url("/Images/bigField.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        resize: both;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+@{
+    //Add image names for game pieces here!
+    string[] gamePieces = { "", "", "" };
+}
+
+<p>Current Time: @DateTime.Now</p>
+<form>
+    <div class="cell-zone">
+   
+        @for (int i = 0; i < Model.Count(); i++)
+            {
+                @if (i % Math.Sqrt(Model.Count) == 0)
+                {
+                    <div class="line-break"></div>
+                }
+            <div class="oneButton", id=@i>
+                <button class="game-button" type="submit" value="@i" name="tileNumber">
+                    @if (!Model.ElementAt(i).Visited)
+                    {
+                        <img class="game-button-image" src="~/Images/field.png" />
+                    }
+                    else
+                    {
+                        if (Model[i].State > 0)
+                        {
+                            <!--script>alert("Game Over!!!");</!--script-->
+                            <img class="game-button-image" src="~/Images/bomb3.png" />
+                        }
+                        else
+                        {
+                            <img class="game-button-image" src="~/Images/hole3.png" />
+                            <div class="centered">@Model[i].Neighbors</div>
+                        }
+                    }
+
+                    <!--<div class="button-label">
+                        @Model.ElementAt(i).State,
+                        @Model.ElementAt(i).Neighbors,
+                        @Model.ElementAt(i).Visited
+                    </div>-->
+                </button>
+            </div>
+         }
+    
+    </div>
+</form>
+<form asp-action="SaveGame">
+    <input type="submit" value="Save Game" class="btn btn-primary" />
+</form>

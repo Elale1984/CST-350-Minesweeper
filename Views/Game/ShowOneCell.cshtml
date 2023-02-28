@@ -1,0 +1,42 @@
+﻿@model Milestone.Models.CellModel
+
+@{
+    //Add image names for game pieces here!
+    string[] gamePieces = { "", "", "" };
+}
+
+<button class="game-button" type="submit" value="@Model.ID" name="tileNumber">
+
+    @if (!@Model.Visited)
+    {
+        if (Model.Flagged)
+        {
+            <img class="game-button-image" src="~/Images/shovel.png" />
+        }
+        else
+        {
+            <img class="game-button-image" src="~/Images/field.png" />
+        }
+    }
+    else
+    {
+
+        if (@Model.State > 0)
+        {
+            <!--script>alert("Game Over!!!");</!--script-->
+            <img class="game-button-image" src="~/Images/bomb3.png" />
+        }
+        else
+        {
+            <img class="game-button-image" src="~/Images/hole3.png" />
+            <div class="centered">@Model.Neighbors</div>
+        }
+
+    }
+
+    <!--<div class="button-label">
+        @Model.State,
+        @Model.Neighbors,
+        @Model.Visited
+    </div>-->
+</button>

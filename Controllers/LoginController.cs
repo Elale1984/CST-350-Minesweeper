@@ -2,6 +2,7 @@
 
 using CST_350_Minesweeper.Models;
 using CST_350_Minesweeper.Services;
+using Milestone.Controllers;
 
 namespace login.Controllers
 {
@@ -19,8 +20,9 @@ namespace login.Controllers
             if (loginService.IsValid(user))
             {
                 User currentUser = loginService.GetCurrentLoggedInUser();
+                var minesweeperBoardController = new MinesweeperBoardController();
 
-                return View("LoginSuccess", currentUser);
+                return RedirectToAction("Index", "MinesweeperBoard");
 
             }
             else
