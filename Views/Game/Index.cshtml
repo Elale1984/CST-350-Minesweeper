@@ -38,7 +38,7 @@
     }
 
     .cell-zone {
-        background-image: url("/Images/bigField.png");
+        background-image: url("/imgage/bomb.png");
         background-repeat: no-repeat;
         background-size: contain;
         resize: both;
@@ -73,27 +73,27 @@
                 <button class="game-button" type="submit" value="@i" name="tileNumber">
                     @if (!Model.ElementAt(i).Visited)
                     {
-                        <img class="game-button-image" src="~/Images/field.png" />
+                        <img class="game-button-image" src="~/img/field.png" />
                     }
                     else
                     {
                         if (Model[i].State > 0)
                         {
                             <!--script>alert("Game Over!!!");</!--script-->
-                            <img class="game-button-image" src="~/Images/bomb3.png" />
+                            <img class="game-button-image" src="~/img/mine.png" />
                         }
                         else
                         {
-                            <img class="game-button-image" src="~/Images/hole3.png" />
+                            <img class="game-button-image" src="~/img/hole.png" />
                             <div class="centered">@Model[i].Neighbors</div>
                         }
                     }
 
-                    <!--<div class="button-label">
+                    <div class="button-label">
                         @Model.ElementAt(i).State,
                         @Model.ElementAt(i).Neighbors,
                         @Model.ElementAt(i).Visited
-                    </div>-->
+                    </div>
                 </button>
             </div>
          }

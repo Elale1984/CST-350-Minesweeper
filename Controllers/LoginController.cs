@@ -22,7 +22,7 @@ namespace login.Controllers
                 User currentUser = loginService.GetCurrentLoggedInUser();
                 var minesweeperBoardController = new MinesweeperBoardController();
 
-                return RedirectToAction("Index", "MinesweeperBoard");
+                return RedirectToAction("Index", "Game");
 
             }
             else

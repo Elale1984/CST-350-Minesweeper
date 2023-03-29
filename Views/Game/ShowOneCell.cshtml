@@ -11,11 +11,11 @@
     {
         if (Model.Flagged)
         {
-            <img class="game-button-image" src="~/Images/shovel.png" />
+            <img class="game-button-image" src="~/img/flag.png" />
         }
         else
         {
-            <img class="game-button-image" src="~/Images/field.png" />
+            <img class="game-button-image" src="~/img/field.png" />
         }
     }
     else
@@ -24,11 +24,11 @@
         if (@Model.State > 0)
         {
             <!--script>alert("Game Over!!!");</!--script-->
-            <img class="game-button-image" src="~/Images/bomb3.png" />
+            <img class="game-button-image" src="~/img/mine.png" />
         }
         else
         {
-            <img class="game-button-image" src="~/Images/hole3.png" />
+            <img class="game-button-image" src="~/img/hole.png" />
             <div class="centered">@Model.Neighbors</div>
         }
 

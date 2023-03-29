@@ -1,8 +1,14 @@
 ﻿using CST_350_Minesweeper.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Milestone.Models;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace CST_350_Minesweeper.Controllers
+namespace Milestone.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,7 +21,6 @@ namespace CST_350_Minesweeper.Controllers
 
         public IActionResult Index()
         {
-          
             return View();
         }
 
